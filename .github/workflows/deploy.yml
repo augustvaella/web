@@ -19,5 +19,5 @@ jobs:
                 username: ${{ secrets.SSH_USERNAME }}
                 host: ${{ secrets.SSH_HOST }}
                 source: 'www/index.html'
-                target: '/home/akane121/www'
                 strip_components: 1
+                target: '/home/akane121/www'
