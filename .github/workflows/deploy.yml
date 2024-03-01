@@ -18,5 +18,5 @@ jobs:
                 port: ${{ secrets.SSH_PORT }}
                 username: ${{ secrets.SSH_USERNAME }}
                 host: ${{ secrets.SSH_HOST }}
-                source: 'www/index.html'
-                target: '/home/akane121/www/amanasie_second'
+                source: 'amanasie_second/index.html'
+                target: '/home/akane121/www'
