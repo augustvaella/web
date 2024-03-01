@@ -15,8 +15,8 @@ jobs:
           uses: appleboy/scp-action@v0.1.7
           with:
                 key: ${{ secrets.SK }}
-                ssh_port: ${{ secrets.SSH_PORT }}
-                ssh_username: ${{ secrets.SSH_USERNAME }}
-                ssh_host: ${{ secrets.SSH_HOST }}
+                port: ${{ secrets.SSH_PORT }}
+                username: ${{ secrets.SSH_USERNAME }}
+                host: ${{ secrets.SSH_HOST }}
                 source: 'www/index.html'
                 target: '/home/akane121/www/amanasie_second'
