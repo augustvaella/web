@@ -11,14 +11,20 @@ $(function(){
             cache: false
         }).done(function(csv){
             var def_init = new jQuery.Deferred();
-            var pro_init = def_init.promise()
+            def_init.promise()
             .then(function(csv){
                 console.log("csv loaded.")
+
+                var def_init_array = new jQuery.Deferred();
+                def_init_array.promise()
+                .then(function(dic){
+                    console.log("converting csv to Array succeeded.");
+                    $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
+                    //finished loading csv    
+                });
+
                 var dic = $.csv.toArrays(csv);
-            }).then(function(dic){
-                console.log("converting csv to Array succeeded.");
-                $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
-                //finished loading csv
+                def_init.init_array.resolve(dic);
             });
     
             def_init.resolve();
