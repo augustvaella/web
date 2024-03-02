@@ -75,7 +75,7 @@ $(function(){
             console.log("json loaded.")
             data.dic = json;
         }).fail(function(jqXHR, textStatus, erroThrown){
-                console.log("csv loading failed.")
+                console.log("json loading failed.")
                 $("div[id='information']").text("Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message);
         });
     });
@@ -110,7 +110,7 @@ $(function(){
                 var found_word = false;
 
                 if(d["word"].match(r) || d["part"] || d["translation"] || d["composition"] || d["etymology"]){
-                    founc_word = true;
+                    found_word = true;
                 }
 
                 d["examples"].forEach(function(e){
