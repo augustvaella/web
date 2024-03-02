@@ -73,6 +73,7 @@ $(function(){
             cache: false
         }).done(function(json){
             console.log("json loaded.")
+            $("div[id='information']").text("Json Loaded.");
             data.dic = json;
         }).fail(function(jqXHR, textStatus, erroThrown){
                 console.log("json loading failed.")
@@ -109,7 +110,7 @@ $(function(){
                 var r = new RegExp(w, 'g');
                 var found_word = false;
 
-                if(d["word"].match(r) || d["part"] || d["translation"] || d["composition"] || d["etymology"]){
+                if(d["word"].match(r) || d["part"].match(r) || d["translation"].match(r) || d["composition"].match(r) || d["etymology"].match(r)){
                     found_word = true;
                 }
 
