@@ -160,7 +160,7 @@ $(function(){
                     }
     
                     d["examples"].forEach(function(e){
-                        if(e.match(r)){
+                        if(e["sentence"].match(r) || e["translation"].match(r)){
                             found_word = true;
                         }                   
                     });
