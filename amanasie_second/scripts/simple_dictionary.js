@@ -24,7 +24,7 @@ $(function(){
                 });
 
                 var dic = $.csv.toArrays(csv);
-                def_init.init_array.resolve(dic);
+                def_init_array.resolve(dic);
             });
     
             def_init.resolve(csv);
