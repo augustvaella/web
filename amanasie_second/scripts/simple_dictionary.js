@@ -4,8 +4,6 @@ $(function(){
         //show Loading
         $("div[id='information']").text("Loading...");
 
-        var dic = [];
-
         $.ajax({
             url: URL_CSV_DICTIONARY_SEJRJP,
             type: 'get',
@@ -16,7 +14,7 @@ $(function(){
             var pro_init = def_init.promise()
             .then(function(csv){
                 console.log("csv loaded.")
-                dic = $.csv.toArray(csv);
+                var dic = $.csv.toArrays(csv);
             }).then(function(dic){
                 console.log("converting csv to Array succeeded.");
                 $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
