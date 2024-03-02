@@ -33,8 +33,8 @@ $(function(){
             url = `${URL_MARKDOWN_FOLDER}/${url_object.searchParams.get("name")}.md`;
         }
         
-        console.log(url);
-        console.log(raw_url);
+        //console.log(url);
+        //console.log(raw_url);
         $("div[id='main']").empty();
         load(url);    
     });
