@@ -15,8 +15,10 @@ $(function(){
             var def_init = new $.Deferred();
             var pro_init = def_init.promise()
             .then(function(csv){
+                console.log("csv loaded.")
                 dic = $.csv.toArray(csv);
             }).then(function(dic){
+                console.log("converting csv to Array succeeded.");
                 $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
                 //finished loading csv
             });
@@ -24,6 +26,7 @@ $(function(){
             def_init.resolve();
 
         }).fail(function(jqXHR, textStatus, erroThrown){
+                console.log("csv loading failed.")
                 $("div[id='information']").text("Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message);
         });
     });
