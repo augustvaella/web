@@ -27,7 +27,7 @@ $(function(){
                 def_init.init_array.resolve(dic);
             });
     
-            def_init.resolve();
+            def_init.resolve(csv);
 
         }).fail(function(jqXHR, textStatus, erroThrown){
                 console.log("csv loading failed.")
