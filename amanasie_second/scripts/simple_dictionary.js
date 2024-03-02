@@ -116,7 +116,7 @@ $(function(){
             d.forEach(function(e){
                 data.query.words.forEach(function(w){
                     var r = new RegExp(w, 'g');
-                    if(e.match(r)){
+                    if(!e.match(r)){
                         index += 1;
                         return;
                     }                
