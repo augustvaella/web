@@ -1,4 +1,4 @@
-const amanasie_preview = function(){
+$(function(){
     const convert = function(raw_text){
         let markdown_text = raw_text;
         markdown_text = markdown_text.replace(/&lt;/g, "<");
@@ -25,7 +25,7 @@ const amanasie_preview = function(){
     };
 
     $(document).ready(function(){
-        const raw_url = window.location;
+        const raw_url = window.location.href;
         const search_params = new URLSearchParams(raw_url);
         let url = URL_MARKDOWN_INDEX;
 
@@ -38,4 +38,4 @@ const amanasie_preview = function(){
         $("div[id='main']").empty();
         load(url);    
     });
-};
+});
