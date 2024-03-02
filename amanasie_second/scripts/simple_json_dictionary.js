@@ -17,7 +17,9 @@ $(function(){
 
     //get a result element
     var get_item = function(dic_item, item_element){
-        item_element.append(
+        var header_element = $("<div class='header'>");
+
+        header_element.append(
             $("<span class='word'>")
             .text(dic_item["word"])
             .css({
@@ -25,7 +27,7 @@ $(function(){
             })
         );
 
-        item_element.append(
+        header_element.append(
             $("<span class='part'>")
             .text(dic_item["part"])
             .css({
@@ -33,8 +35,10 @@ $(function(){
             })
         );
 
+        item_element.append(header_element);
+
         item_element.append(
-            $("<span class='translation'>")
+            $("<div class='translation'>")
             .text(dic_item["translation"])
             .css({
                 "margin-left": "0.5em",
@@ -42,7 +46,7 @@ $(function(){
         );
 
         item_element.append(
-            $("<span class='composition'>")
+            $("<div class='composition'>")
             .text(dic_item["composition"])
             .css({
                 "margin-left": "0.5em",
@@ -50,7 +54,7 @@ $(function(){
         );
 
         item_element.append(
-            $("<span class='etymology'>")
+            $("<div class='etymology'>")
             .text(dic_item["etymology"])
             .css({
                 "margin-left": "1.5em",
