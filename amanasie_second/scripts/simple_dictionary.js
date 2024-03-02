@@ -1,4 +1,6 @@
 $(function(){
+    const SEARCH_DELAY = 10;
+
     var initialize_data = function(){
         return {
             'dic': {},
@@ -13,6 +15,7 @@ $(function(){
         };
     };
 
+    //get a result element
     var get_item = function(dic_item, item_element){
         var index = 0;
         dic_item.forEach(function(e){
@@ -33,17 +36,19 @@ $(function(){
         return query_string.split(/[\s\n]+/).map((e) => e.trim());
     };
 
+    //to avoid user's interrupting input
     var set_disabled_input = function(value){
         $("select[name='dictionary']").prop("disabled", value);
         $("input[name='query']").prop("disabled", value);
         $("button[name='search']").prop("disabled", value);
     };
 
+    //--------
+
     var data = initialize_data();
 
     $(document).ready(function(){
-        //disable button
-        //show Loading
+        //append dictionaries
         $("select[name='dictionary']").append($("<option value=''>").text("Select Dictionary"));
         $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("sejrjp"));
         $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("barrjp"));
@@ -51,6 +56,7 @@ $(function(){
 
     });
 
+    //change dictionary
     $("body").on("change", "select[name='dictionary']", function(){
         const url = $("select[name='dictionary']").val();
         if(!url){return;}
@@ -59,6 +65,7 @@ $(function(){
 
         $("div[id='information']").text("Loading...");
 
+        //load dictionary
         $.ajax({
             url: url,
             type: 'get',
@@ -91,6 +98,7 @@ $(function(){
         });
     });
 
+    //search word(s) on the current dictionary
     $("body").on("click", "button[name='search']", function(){
         data.query = initialize_query();
         data.query.words = get_query_array($("input[name='query']").val());
@@ -145,27 +153,19 @@ $(function(){
             $("div[id='information']").text("Searching..." + data.count + " item(s)");
         });
 
-        var interval_id = setInterval(function(){
+        //update
+        var update = function(){
             def.notify();
-        });
+            setTimeout(update, SEARCH_DELAY);
+        };
 
+        //finish
         def.promise().done(function(){
             $("div[id='information']").text("Found " + data.count + " item(s).");
-            clearInterval(interval_id);
             set_disabled_input(false);           
         });
+
+        //start update
+        setTimeout(update, SEARCH_DELAY);
     });
-
-    //update = function()
-    //search
-
-    //$(button_search).on
-    //deferred_search = $.deferred
-    //.progress(searching)
-    //.done()
-    
-
-    //update with setTimeout
-
-
 })
