@@ -24,5 +24,7 @@ const amanasie_preview = function(url){
         return markdown_text;
     };
 
-    $("div[id='main']").html(marked.parse(load(url)));
+    const t = load(url)
+    console.log(t)
+    $("div[id='main']").html(marked.parse(t));
 };
