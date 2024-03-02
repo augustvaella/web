@@ -131,7 +131,7 @@ $(function(){
             });
             
             //not hit
-            if(founc_word_count < data.query.words.length){
+            if(found_word_count < data.query.words.length){
                 index += 1;
                 return;
             }
