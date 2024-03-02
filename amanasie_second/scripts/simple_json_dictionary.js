@@ -17,16 +17,57 @@ $(function(){
 
     //get a result element
     var get_item = function(dic_item, item_element){
-        var index = 0;
-        dic_item.forEach(function(e){
+        item_element.append(
+            $("<span class='word'>")
+            .text(dic_item["word"])
+            .css({
+                "margin-left": "0.5em",
+            })
+        );
+
+        item_element.append(
+            $("<span class='part'>")
+            .text(dic_item["part"])
+            .css({
+                "margin-left": "0.5em",
+            })
+        );
+
+        item_element.append(
+            $("<span class='translation'>")
+            .text(dic_item["translation"])
+            .css({
+                "margin-left": "0.5em",
+            })
+        );
+
+        item_element.append(
+            $("<span class='composition'>")
+            .text(dic_item["composition"])
+            .css({
+                "margin-left": "0.5em",
+            })
+        );
+
+        item_element.append(
+            $("<span class='etymology'>")
+            .text(dic_item["etymology"])
+            .css({
+                "margin-left": "0.5em",
+            })
+        );
+
+        var examples_div = $("<div class='examples'>");
+        var examples_index = 0;
+        dic_item["examples"].forEach(function(e){
             item_element.append(
-                $("<span class='" + index + "'>")
+                $("<div class='" + examples_index + "'>")
                 .text(e)
                 .css({
                     "margin-left": "0.5em",
                 })
             );
-            index += 1;
+            examples_index += 1;
         });
 
         return item_element;
