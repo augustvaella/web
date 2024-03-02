@@ -8,5 +8,5 @@
 |----|----|----|
 |x1|x2|x3|
 
-[リンク1](./doujin/doujinshi_list.md)
+<a href="./index.html" name="./doujin/doujinshi_list.md">リンク1</a>
 

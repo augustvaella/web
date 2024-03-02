@@ -25,7 +25,7 @@ const amanasie_preview = function(url){
     };
 
     $("click", "a", function(element){
-        const u = element.attr("href");
+        const u = element.attr("name");
         $("div[id='main']").empty();
         $("div[id='main']").text("Loading...");
         load(u);
