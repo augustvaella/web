@@ -1,28 +1,41 @@
 $(function(){
-    var data = {
-        'dic': {},
-        'query': "",
-        'count': 0,
+    var initialize_data = function(){
+        return {
+            'dic': {},
+            'query': "",
+            'count': 0,
+        };
     };
+    var data = initialize_data();
 
     $(document).ready(function(){
         //disable button
         //show Loading
+        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("sejrjp"));
+        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("barrjp"));
+        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("roganrjp"));
+
+    });
+
+    $("body").on("click", "select[name='dictionary']", function(){
+        const url = $("select[name='dictionary']").val();
+        data = initialize_data();
+
         $("div[id='information']").text("Loading...");
 
         $.ajax({
-            url: URL_CSV_DICTIONARY_SEJRJP,
+            url: url,
             type: 'get',
             dataType: 'text',
             cache: false
         }).done(function(csv){
-            var def_init = new jQuery.Deferred();
-            def_init.promise()
+            var def = new jQuery.Deferred();
+            def.promise()
             .then(function(csv){
                 console.log("csv loaded.")
 
-                def_init.array = new jQuery.Deferred();
-                def_init.array.promise()
+                def.array = new jQuery.Deferred();
+                def.array.promise()
                 .then(function(dic){
                     console.log("converting csv to Array succeeded.");
                     $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
@@ -31,10 +44,10 @@ $(function(){
                 });
 
                 var dic = $.csv.toArrays(csv);
-                def_init.array.resolve(dic);
+                def.array.resolve(dic);
             });
     
-            def_init.resolve(csv);
+            def.resolve(csv);
 
         }).fail(function(jqXHR, textStatus, erroThrown){
                 console.log("csv loading failed.")
