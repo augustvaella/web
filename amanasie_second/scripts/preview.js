@@ -17,13 +17,11 @@ const amanasie_preview = function(url){
             dataType:"text",
         }).done(function(text){
             markdown_text = convert(text);
-
             $("div[id='main']").html(marked.parse(markdown_text));
         }).fail(function(jqXHR, textStatus, errorThrown){
-            markdown_text = "Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message;
+            text = "Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message;
+            $("div[id='main']").text(text);
         });
-
-        return markdown_text;
     };
 
     load(url);
