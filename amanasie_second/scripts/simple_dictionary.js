@@ -113,21 +113,28 @@ $(function(){
 
             //AND matching
             var d = data.dic[index];
+            var found_word_count = 0;
+
             data.query.words.forEach(function(w){
-                var next_word = false;
                 var r = new RegExp(w, 'g');
+                var found_word = false;
 
                 d.forEach(function(e){
                     if(e.match(r)){
-                        next_word = true;
+                        found_word = true;
                     }                   
                 });
-                
-                if(!next_word){
-                    index += 1;
-                    return;
+
+                if(found_word){
+                    found_word_count += 1;
                 }
             });
+            
+            //not hit
+            if(founc_word_count < data.query.words.length){
+                index += 1;
+                return;
+            }
 
             //hit
             $("div[id='result']").append(
