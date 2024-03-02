@@ -17,7 +17,7 @@ $(function(){
 
     });
 
-    $("body").on("click", "select[name='dictionary']", function(){
+    $("body").on("change", "select[name='dictionary']", function(){
         const url = $("select[name='dictionary']").val();
         data = initialize_data();
 
