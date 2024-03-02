@@ -150,24 +150,30 @@ $(function(){
             var d = data.dic["content"][index];
             var found_word_count = 0;
 
-            data.query.words.forEach(function(w){
-                var r = new RegExp(w, 'g');
-                var found_word = false;
-
-                if(d["word"].match(r) || d["part"].match(r) || d["translation"].match(r) || d["composition"].match(r) || d["etymology"].match(r)){
-                    found_word = true;
-                }
-
-                d["examples"].forEach(function(e){
-                    if(e.match(r)){
+            if(data.query.words.length > 0){
+                data.query.words.forEach(function(w){
+                    var r = new RegExp(w, 'g');
+                    var found_word = false;
+    
+                    if(d["word"].match(r) || d["part"].match(r) || d["translation"].match(r) || d["composition"].match(r) || d["etymology"].match(r)){
                         found_word = true;
-                    }                   
-                });
+                    }
+    
+                    d["examples"].forEach(function(e){
+                        if(e.match(r)){
+                            found_word = true;
+                        }                   
+                    });
+    
+                    if(found_word){
+                        found_word_count += 1;
+                    }
+                });    
+            } else {
+                //all words show if no query word
+                found_word_count = data.query.words.length;
+            }
 
-                if(found_word){
-                    found_word_count += 1;
-                }
-            });
             
             //not hit
             if(found_word_count < data.query.words.length){
