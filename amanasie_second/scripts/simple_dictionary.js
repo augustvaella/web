@@ -33,6 +33,12 @@ $(function(){
         return query_string.split(/[\s\n]+/).map((e) => e.trim());
     };
 
+    var set_disabled_input = function(value){
+        $("select[name='dictionary']").prop("disabled", value);
+        $("input[name='query']").prop("disabled", value);
+        $("button[name='search']").prop("disabled", value);
+    };
+
     var data = initialize_data();
 
     $(document).ready(function(){
@@ -92,6 +98,7 @@ $(function(){
 
         $("div[id='result']").empty();
         $("div[id='information']").text("Searching...");
+        set_disabled_input(true);
 
         var index = 0;
         var max = data.dic.length;
@@ -128,7 +135,8 @@ $(function(){
 
         def.promise().done(function(){
             $("div[id='information']").text("Found " + data.count + " item(s).");
-            clearInterval(interval_id);           
+            clearInterval(interval_id);
+            set_disabled_input(false);           
         });
     });
 
