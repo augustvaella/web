@@ -1,4 +1,4 @@
-const amanasie_preview = function(url){
+const amanasie_preview = function(){
     const convert = function(raw_text){
         let markdown_text = raw_text;
         markdown_text = markdown_text.replace(/&lt;/g, "<");
@@ -24,14 +24,16 @@ const amanasie_preview = function(url){
         });
     };
 
-    $("click", "a", function(element){
-        const u = element.attr("name");
-        $("div[id='main']").empty();
-        $("div[id='main']").text("Loading...");
-        load(u);
-    });
-
     $(document).ready(function(){
-        load(url);
+        const raw_url = window.location;
+        const search_params = new URLSearchParams(raw_url);
+        let url = URL_MARKDOWN_INDEX;
+
+        if(search_params.has("name")){
+            url = `${URL_MARKDOWN_FOLDER}/${search_params.get("name")}`;
+        }
+        
+        $("div[id='main']").empty();
+        load(url);    
     });
 };
