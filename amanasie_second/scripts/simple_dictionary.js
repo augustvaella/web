@@ -51,8 +51,8 @@ $(function(){
         //append dictionaries
         $("select[name='dictionary']").append($("<option value=''>").text("Select Dictionary"));
         $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("sejrjp"));
-        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("barrjp"));
-        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("roganrjp"));
+        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_BARRJP + "'>").text("barrjp"));
+        $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_ROGANRJP + "'>").text("roganrjp"));
 
     });
 
