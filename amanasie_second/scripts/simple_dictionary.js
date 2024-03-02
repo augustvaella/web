@@ -113,14 +113,20 @@ $(function(){
 
             //AND matching
             var d = data.dic[index];
-            d.forEach(function(e){
-                data.query.words.forEach(function(w){
-                    var r = new RegExp(w, 'g');
-                    if(!e.match(r)){
-                        index += 1;
-                        return;
-                    }                
+            data.query.words.forEach(function(w){
+                var next_word = false;
+                var r = new RegExp(w, 'g');
+
+                d.forEach(function(e){
+                    if(e.match(r)){
+                        next_word = true;
+                    }                   
                 });
+                
+                if(!next_word){
+                    index += 1;
+                    return;
+                }
             });
 
             //hit
