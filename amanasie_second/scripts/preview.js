@@ -30,9 +30,11 @@ const amanasie_preview = function(){
         let url = URL_MARKDOWN_INDEX;
 
         if(search_params.has("name")){
-            url = `${URL_MARKDOWN_FOLDER}/${search_params.get("name")}`;
+            url = `${URL_MARKDOWN_FOLDER}/${search_params.get("name")}.md`;
         }
         
+        console.log(url);
+        console.log(raw_url);
         $("div[id='main']").empty();
         load(url);    
     });
