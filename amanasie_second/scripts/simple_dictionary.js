@@ -6,6 +6,23 @@ $(function(){
             'count': 0,
         };
     };
+
+    var get_item = function(dic_item, item_element){
+        var index = 0;
+        dic_item.forEach(function(e){
+            item_element.append(
+                $("<span class='" + index + "'>")
+                .text(e)
+                .css({
+                    "margin-left": "0.5em",
+                })
+            );
+            index += 1;
+        });
+
+        return item_element;
+    };
+
     var data = initialize_data();
 
     $(document).ready(function(){
@@ -72,7 +89,7 @@ $(function(){
             }
             
             $("div[id='result']").append(
-                $("<div class='item' id='" + index + "'>").text("#" + index)
+                get_item(data.dic[index],                 $("<div class='item' id='" + index + "'>"))
             );
             index += 1;
         });
