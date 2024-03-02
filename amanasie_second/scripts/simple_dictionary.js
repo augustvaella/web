@@ -2,8 +2,14 @@ $(function(){
     var initialize_data = function(){
         return {
             'dic': {},
-            'query': "",
+            'query': initialize_query(),
             'count': 0,
+        };
+    };
+
+    var initialize_query = function(){
+        return {
+            "words": [],
         };
     };
 
@@ -21,6 +27,10 @@ $(function(){
         });
 
         return item_element;
+    };
+
+    var get_query_array = function(query_string){
+        return query_string.split(/[\s\n]+/).map((e) => e.trim());
     };
 
     var data = initialize_data();
@@ -73,8 +83,10 @@ $(function(){
     });
 
     $("body").on("click", "button[name='search']", function(){
-        data.query = $("input[name='query']").val();
+        data.query = initialize_query();
+        data.query.words = get_query_array($("input[name='query']").val());
         data.count = 0;
+
         $("div[id='result']").empty();
         $("div[id='information']").text("Searching...");
 
@@ -87,10 +99,21 @@ $(function(){
                 def.resolve();
                 return;
             }
+
+            var d = data.dic[index];
+            d.forEach(function(e){
+                data.query.words.forEach(function(w){
+                    var r = new RegExp(w, 'g');
+                    if(e.match(r)){
+                        $("div[id='result']").append(
+                            get_item(d, $("<div class='item' id='" + index + "'>"))
+                        );
+                        index += 1;
+                        return;
+                    }                
+                });
+            });
             
-            $("div[id='result']").append(
-                get_item(data.dic[index],                 $("<div class='item' id='" + index + "'>"))
-            );
             index += 1;
         });
 
