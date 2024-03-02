@@ -31,7 +31,7 @@ $(function(){
                     'translation': e[2],
                     'composition': e[3],
                     'etymology': e[4],
-                    'examples': e.slice(5),
+                    'examples': e.slice(5).filter((w)=>w),
                 });
                 def.index += 1;
                 $("div[id='information']").text("Converting... " + def.index + " / " + dic.length);
