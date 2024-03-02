@@ -1,4 +1,10 @@
 $(function(){
+    var data = {
+        'dic': {},
+        'query': "",
+        'count': 0,
+    };
+
     $(document).ready(function(){
         //disable button
         //show Loading
@@ -20,6 +26,7 @@ $(function(){
                 .then(function(dic){
                     console.log("converting csv to Array succeeded.");
                     $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
+                    data.dic = dic;
                     //finished loading csv    
                 });
 
@@ -32,6 +39,38 @@ $(function(){
         }).fail(function(jqXHR, textStatus, erroThrown){
                 console.log("csv loading failed.")
                 $("div[id='information']").text("Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message);
+        });
+    });
+
+    $("body").on("click", "button[name='search']", function(){
+        data.query = $("input[name='query']").val();
+        data.count = 0;
+        $("div[id='result']").empty();
+        $("div[id='information']").text("Searching...");
+
+        var index = 0;
+        var max = data.dic.length;
+
+        var def = new jQuery.Deferred();
+        def.progress(function(){
+            if(index >= max){
+                def.resolve();
+                return;
+            }
+            
+            $("div[id='result']").append(
+                $("<div class='item' id='" + index + "'>").text("#" + index)
+            );
+            index += 1;
+        });
+
+        var interval_id = setInterval(function(){
+            def.notify();
+        });
+
+        def.promise().done(function(){
+            $("div[id='information']").text("Found " + data.count + " item(s).");
+            clearInterval(interval_id);           
         });
     });
 
