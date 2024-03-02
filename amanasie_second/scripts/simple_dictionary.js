@@ -12,7 +12,7 @@ $(function(){
             dataType: 'text',
             cache: false
         }).done(function(csv){
-            var def_init = new $.Deferred();
+            var def_init = $.deferred();
             var pro_init = def_init.promise()
             .then(function(csv){
                 console.log("csv loaded.")
