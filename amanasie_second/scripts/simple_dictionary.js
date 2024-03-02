@@ -15,8 +15,8 @@ $(function(){
             .then(function(csv){
                 console.log("csv loaded.")
 
-                var def_init_array = new jQuery.Deferred();
-                def_init_array.promise()
+                def_init.array = new jQuery.Deferred();
+                def_init.array.promise()
                 .then(function(dic){
                     console.log("converting csv to Array succeeded.");
                     $("div[id='information']").text("Loaded CSV Dictionary: " + dic.length);
@@ -24,7 +24,7 @@ $(function(){
                 });
 
                 var dic = $.csv.toArrays(csv);
-                def_init_array.resolve(dic);
+                def_init.array.resolve(dic);
             });
     
             def_init.resolve(csv);
