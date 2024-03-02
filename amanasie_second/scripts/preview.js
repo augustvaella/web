@@ -24,5 +24,14 @@ const amanasie_preview = function(url){
         });
     };
 
-    load(url);
+    $("click", "a", function(element){
+        const u = element.attr("href");
+        $("div[id='main']").empty();
+        $("div[id='main']").text("Loading...");
+        load(u);
+    });
+
+    $(document).ready(function(){
+        load(url);
+    });
 };
