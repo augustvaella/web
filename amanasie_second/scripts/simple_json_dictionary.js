@@ -62,7 +62,7 @@ $(function(){
         dic_item["examples"].forEach(function(e){
             examples_div.append(
                 $("<div class='" + examples_index + "'>")
-                .text(e)
+                .text(`${e["sentence"]} ${e["translation"]}`)
                 .css({
                     "margin-left": "0.5em",
                 })
