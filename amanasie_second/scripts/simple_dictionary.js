@@ -105,28 +105,31 @@ $(function(){
 
         var def = new jQuery.Deferred();
         def.progress(function(){
+            //end of the dic
             if(index >= max){
                 def.resolve();
                 return;
             }
 
+            //AND matching
             var d = data.dic[index];
             d.forEach(function(e){
                 data.query.words.forEach(function(w){
                     var r = new RegExp(w, 'g');
                     if(e.match(r)){
-                        $("div[id='result']").append(
-                            get_item(d, $("<div class='item' id='" + index + "'>"))
-                        );
                         index += 1;
-                        data.count += 1;
-                        $("div[id='information']").text("Searching..." + data.count + " item(s)");
                         return;
                     }                
                 });
             });
-            
+
+            //hit
+            $("div[id='result']").append(
+                get_item(d, $("<div class='item' id='" + index + "'>"))
+            );
             index += 1;
+            data.count += 1;
+            $("div[id='information']").text("Searching..." + data.count + " item(s)");
         });
 
         var interval_id = setInterval(function(){
