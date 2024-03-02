@@ -26,11 +26,11 @@ $(function(){
 
     $(document).ready(function(){
         const raw_url = window.location.href;
-        const search_params = new URL(raw_url);
+        const url_object = new URL(raw_url);
         let url = URL_MARKDOWN_INDEX;
 
-        if(search_params.searchParams.has("name")){
-            url = `${URL_MARKDOWN_FOLDER}/${search_params.get("name")}.md`;
+        if(url_object.searchParams.has("name")){
+            url = `${URL_MARKDOWN_FOLDER}/${url_object.searchParams.get("name")}.md`;
         }
         
         console.log(url);
