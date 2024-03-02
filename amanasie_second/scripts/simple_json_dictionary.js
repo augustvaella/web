@@ -53,14 +53,14 @@ $(function(){
             $("<span class='etymology'>")
             .text(dic_item["etymology"])
             .css({
-                "margin-left": "0.5em",
+                "margin-left": "1.5em",
             })
         );
 
         var examples_div = $("<div class='examples'>");
         var examples_index = 0;
         dic_item["examples"].forEach(function(e){
-            item_element.append(
+            examples_div.append(
                 $("<div class='" + examples_index + "'>")
                 .text(e)
                 .css({
@@ -69,6 +69,7 @@ $(function(){
             );
             examples_index += 1;
         });
+        item_element.append(examples_div);
 
         return item_element;
     };
