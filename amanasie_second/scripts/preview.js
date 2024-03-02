@@ -26,10 +26,10 @@ $(function(){
 
     $(document).ready(function(){
         const raw_url = window.location.href;
-        const search_params = new URLSearchParams(raw_url);
+        const search_params = new URL(raw_url);
         let url = URL_MARKDOWN_INDEX;
 
-        if(search_params.has("name")){
+        if(search_params.searchParams.has("name")){
             url = `${URL_MARKDOWN_FOLDER}/${search_params.get("name")}.md`;
         }
         
