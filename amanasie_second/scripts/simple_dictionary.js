@@ -38,6 +38,7 @@ $(function(){
     $(document).ready(function(){
         //disable button
         //show Loading
+        $("select[name='dictionary']").append($("<option value=''>").text("Select Dictionary"));
         $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("sejrjp"));
         $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("barrjp"));
         $("select[name='dictionary']").append($("<option value='" + URL_CSV_DICTIONARY_SEJRJP + "'>").text("roganrjp"));
@@ -46,6 +47,8 @@ $(function(){
 
     $("body").on("change", "select[name='dictionary']", function(){
         const url = $("select[name='dictionary']").val();
+        if(!url){return;}
+
         data = initialize_data();
 
         $("div[id='information']").text("Loading...");
@@ -109,6 +112,8 @@ $(function(){
                             get_item(d, $("<div class='item' id='" + index + "'>"))
                         );
                         index += 1;
+                        data.count += 1;
+                        $("div[id='information']").text("Searching..." + data.count + " item(s)");
                         return;
                     }                
                 });
