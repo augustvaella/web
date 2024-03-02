@@ -143,6 +143,8 @@ $(function(){
                 return;
             }
 
+            $("div[id='information']").text(`Searching(${index}/${max}) Found ${data.count} item(s)`);
+
             //AND matching
             var d = data.dic["content"][index];
             var found_word_count = 0;
@@ -178,7 +180,6 @@ $(function(){
             );
             index += 1;
             data.count += 1;
-            $("div[id='information']").text("Searching..." + data.count + " item(s)");
         });
 
         //update
