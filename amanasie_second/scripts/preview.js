@@ -17,6 +17,8 @@ const amanasie_preview = function(url){
             dataType:"text",
         }).done(function(text){
             markdown_text = convert(text);
+
+            $("div[id='main']").html(marked.parse(markdown_text));
         }).fail(function(jqXHR, textStatus, errorThrown){
             markdown_text = "Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message;
         });
@@ -24,7 +26,5 @@ const amanasie_preview = function(url){
         return markdown_text;
     };
 
-    const t = load(url)
-    console.log(t)
-    $("div[id='main']").html(marked.parse(t));
+    load(url);
 };
