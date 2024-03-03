@@ -150,6 +150,13 @@ li {
     line-height: 1.2em;
 }
 
+li p {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+}
+
 strong {
     font-weight: bolder
 }
