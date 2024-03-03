@@ -67,17 +67,15 @@ p {
     line-height: 140%;
 }
 
-blockquote {
+blockquote, pre {
     width: 85%;
     margin-bottom: 0.4em;
     background-color: #E6E6E6;
     line-height: 140%;
+    padding: 0.3em;
 }
 
 pre {
-    width: 85%;
-    margin-bottom: 0.4em;
-    background-color: #E6E6E6;
     font-family: monospace;
 }
 
@@ -85,6 +83,7 @@ code {
     background-color: #E6E6E6;
     width: 100%;
     font-family: monospace;
+    padding: 2px;
 }
 
 table {
@@ -99,20 +98,21 @@ tr {
 }
 
 th {
-    width: 100%;
     background-color: #FFDDCC;
     font-weight: bolder;
     margin-left: 0.1em;
+    padding: 2px;
 }
 
 td {
-    width: 100%;
     margin-left: 0.1em;
+    padding: 2px;
 }
 
 ol, li {
     width: 85%;
     margin-bottom: 0.2em;
+    padding: 3px;
 }
 
 strong {
