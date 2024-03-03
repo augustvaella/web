@@ -27,7 +27,6 @@ $(function(){
         header_element.append(
             $("<span class='part'>")
             .text(dic_item["part"])
-            .trigger("create")
         );
 
         item_element.append(header_element);

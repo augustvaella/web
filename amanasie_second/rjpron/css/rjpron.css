@@ -2,7 +2,7 @@ div#result div.item {
     border: 1px black solid;
     margin-bottom: 1em;
     width: 85%;
-    padding: 0.3 em;
+    padding: 0.3em;
 }
 
 div#result div.item div.header {
@@ -13,23 +13,23 @@ div#result div.item div.header span.word {
 }
 
 div#result div.item div.header span.part {
-    margin-left: 0.8 em;    
+    margin-left: 0.8em;    
 }
 
 div#result div.item div.translation {
-    margin-left: 2.0 em;
+    margin-left: 2.0em;
 }
 
 div#result div.item div.composition {
-    margin-left: 2.0 em;
+    margin-left: 2.0em;
 }
 
 div#result div.item div.etymology {
-    margin-left: 2.0 em;
+    margin-left: 2.0em;
 }
 
 div#result div.item div.examples {
-    margin-left: 3.0 em;
+    margin-left: 3.0em;
 }
 
 div#result div.item div.examples div {
@@ -41,6 +41,6 @@ div#result div.item div.examples span.sentence {
 }
 
 div#result div.item div.examples span.translation {
-    margin-left: 0.8 em;
+    margin-left: 0.8em;
 }
 
