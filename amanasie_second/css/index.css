@@ -9,7 +9,6 @@ body {
 }
 
 h1{
-    width: 100%;
     font-size: x-large;
     font-weight: bolder;
     text-align: center;
@@ -17,7 +16,6 @@ h1{
 }
 
 h2 {
-    width: 100%;
     display: inline-block;
     font-size: large;
     font-weight: bold;
@@ -130,5 +128,5 @@ strike {
 }
 
 hr {
-    
+
 }
