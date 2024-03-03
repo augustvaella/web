@@ -36,11 +36,11 @@ div#result div.item div.examples div {
 
 }
 
-div#result div.item div.examples div span.sentence {
+div#result div.item div.examples span.sentence {
 
 }
 
-div#result div.item div.examples div span.translation {
+div#result div.item div.examples span.translation {
     margin-left: 0.8 em;
 }
 
