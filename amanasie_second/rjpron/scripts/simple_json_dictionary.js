@@ -1,5 +1,5 @@
 $(function(){
-    const SEARCH_DELAY = 10;
+    const search_delay = SEARCH_DELAY;
 
     var initialize_data = function(){
         return {
@@ -22,17 +22,11 @@ $(function(){
         header_element.append(
             $("<span class='word'>")
             .text(dic_item["word"])
-            .css({
-                "margin-left": "0.5em",
-            })
         );
 
         header_element.append(
             $("<span class='part'>")
             .text(dic_item["part"])
-            .css({
-                "margin-left": "0.5em",
-            })
         );
 
         item_element.append(header_element);
@@ -40,37 +34,25 @@ $(function(){
         item_element.append(
             $("<div class='translation'>")
             .text(dic_item["translation"])
-            .css({
-                "margin-left": "0.5em",
-            })
         );
 
         item_element.append(
             $("<div class='composition'>")
             .text(dic_item["composition"])
-            .css({
-                "margin-left": "0.5em",
-            })
         );
 
         item_element.append(
             $("<div class='etymology'>")
             .text(dic_item["etymology"])
-            .css({
-                "margin-left": "1.5em",
-            })
         );
 
         var examples_div = $("<div class='examples'>");
         var examples_index = 0;
         dic_item["examples"].forEach(function(e){
-            examples_div.append(
-                $("<div class='" + examples_index + "'>")
-                .text(`${e["sentence"]} ${e["translation"]}`)
-                .css({
-                    "margin-left": "0.5em",
-                })
-            );
+            let s = $("<span class='sentence'>").text(e["sentence"]);
+            let t = $("<span class='translation'>").text(e["translation"]);
+            let g = $("<div class='" + examples_index + "'>").append(s, t);
+            examples_div.append(g);
             examples_index += 1;
         });
         item_element.append(examples_div);
@@ -196,7 +178,7 @@ $(function(){
         //update
         var update = function(){
             def.notify();
-            setTimeout(update, SEARCH_DELAY);
+            setTimeout(update, search_delay);
         };
 
         //finish
@@ -206,6 +188,6 @@ $(function(){
         });
 
         //start update
-        setTimeout(update, SEARCH_DELAY);
+        setTimeout(update, search_delay);
     });
 })
