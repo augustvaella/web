@@ -4,23 +4,23 @@ body {
     margin: 5% auto;
     background-color: #FFF7E6;
     color: black;
-    line-height: 140%;
+    line-height: 120%;
     text-align: left;
 }
 
 h1{
+    width: 100%;
     font-size: x-large;
     font-weight: bolder;
-    line-height: 120%;
     text-align: center;
     margin-bottom: 2em;
 }
 
 h2 {
+    width: 100%;
     display: inline-block;
     font-size: large;
     font-weight: bold;
-    line-height: 120%;
     margin-bottom: 1em;
     padding-left: 0.1em;
     padding-bottom: 0.1em;
@@ -29,64 +29,106 @@ h2 {
 }
 
 h3 {
+    width: 100%;
     font-size: large;
     font-weight: bold;
-    line-height: 120%;
     margin-bottom: 0.8em;
     padding-left: 0.1em;
     border-left: 4px black solid;
 }
 
 h4 {
+    width: 100%;
     font-size: large;
     font-weight: bold;
-    line-height: 120%;
     margin-bottom: 0.5em;
 }
 
 h5 {
+    width: 100%;
     font-size: medium;
     font-weight: bold;
-    line-height: 120%;
     margin-bottom:0.3em;
 }
 
 h6 {
+    width: 100%;
     float: left;
     padding-right: 8px;
     padding-bottom: 8px;
     font-size: medium;
     font-weight: normal;
-    line-height: 120%;
     margin-bottom: 0.2em;
 }
 
 p {
     width: 93%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 40%;
+    line-height: 140%;
 }
 
 blockquote {
     width: 85%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 40%;
     background-color: #E6E6E6;
+    line-height: 140%;
+}
+
+pre {
+    width: 85%;
+    margin-bottom: 40%;
+    background-color: #E6E6E6;
+    font-family: monospace;
+}
+
+code {
+    background-color: #E6E6E6;
+    width: 100%;
+    font-family: monospace;
+}
+
+table {
+    width: 85%;
+    margin-bottom: 2em;
 }
 
 tr {
-    border-botttom: 1px black solid;
+    width: 100%;
+    border-bottom: 1px black solid;
     padding-bottom: 2px;
 }
 
 th {
+    width: 100%;
     background-color: #FFDDCC;
     font-weight: bolder;
     margin-left: 0.1em;
 }
 
 td {
+    width: 100%;
     margin-left: 0.1em;
+}
+
+ol, li {
+    width: 85%;
+    margin-bottom: 20%;
+}
+
+strong {
+    font-weight: bolder
+}
+
+em {
+
+
+}
+
+strike {
+    color: #C6C6C6;
+
+}
+
+hr {
+    
 }
