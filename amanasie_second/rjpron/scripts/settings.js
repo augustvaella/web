@@ -6,4 +6,4 @@ const URL_JSON_DICTIONARY_SEJRJP = "../mm/languages/sejrjp/sejrjp_dictionary.jso
 const URL_JSON_DICTIONARY_BARRJP = "../mm/languages/barrjp/barrjp_dictionary.json";
 const URL_JSON_DICTIONARY_ROGANRJP = "../mm/languages/roganrjp/roganrjp_dictionary.json";
 
-const SEARCH_DELAY = 10;
+const SEARCH_DELAY = 3;

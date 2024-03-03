@@ -2,6 +2,7 @@ div#result div.item {
     border: 1px black solid;
     margin-bottom: 1em;
     width: 85%;
+    padding: 0.3 em;
 }
 
 div#result div.item div.header {
