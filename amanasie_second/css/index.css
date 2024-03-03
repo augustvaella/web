@@ -4,7 +4,7 @@ body {
     margin: 5% auto;
     background-color: #FFF7E6;
     color: black;
-    line-height: 120%;
+    line-height: 1.2em;
     text-align: left;
 }
 
@@ -16,8 +16,13 @@ h1{
     margin-bottom: 2em;
 }
 
+h2, h3, h4, h5 {
+    width: 80%;
+    margin-left: 0;
+    margin-right: auto;
+}
+
 h2 {
-    width: 100%;
     display: inline-block;
     font-size: large;
     font-weight: bold;
@@ -29,7 +34,6 @@ h2 {
 }
 
 h3 {
-    width: 100%;
     font-size: large;
     font-weight: bold;
     margin-bottom: 0.8em;
@@ -38,14 +42,12 @@ h3 {
 }
 
 h4 {
-    width: 100%;
     font-size: large;
     font-weight: bold;
     margin-bottom: 0.5em;
 }
 
 h5 {
-    width: 100%;
     font-size: medium;
     font-weight: bold;
     margin-bottom:0.3em;
@@ -54,6 +56,8 @@ h5 {
 h6 {
     width: 100%;
     float: left;
+    margin-left: auto;
+    margin-right: auto;
     padding-right: 8px;
     padding-bottom: 8px;
     font-size: medium;
@@ -63,16 +67,23 @@ h6 {
 
 p {
     width: 93%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 0.4em;
-    line-height: 140%;
+    line-height: 1.4em;
 }
 
 blockquote, pre {
     width: 85%;
-    margin-bottom: 0.4em;
+    margin-left: auto;
+    margin-right: auto;
+     margin-bottom: 0.4em;
     background-color: #E6E6E6;
-    line-height: 140%;
     padding: 0.3em;
+}
+
+blockquote {
+    line-height: 1.4em;
 }
 
 pre {
@@ -81,18 +92,21 @@ pre {
 
 code {
     background-color: #E6E6E6;
-    width: 100%;
     font-family: monospace;
     padding: 2px;
 }
 
 table {
     width: 85%;
-    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+     margin-bottom: 2em;
 }
 
 tr {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     border-bottom: 1px black solid;
     padding-bottom: 2px;
 }
@@ -111,7 +125,9 @@ td {
 
 ol, li {
     width: 85%;
-    margin-bottom: 0.2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.1em;
     padding: 3px;
 }
 
