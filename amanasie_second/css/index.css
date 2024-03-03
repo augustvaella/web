@@ -62,6 +62,7 @@ h5 {
 }
 
 h6 {
+    display: inline;
     width: auto;
     height: auto;
     float: left;
