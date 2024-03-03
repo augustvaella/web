@@ -9,6 +9,7 @@ body {
 }
 
 h1{
+    width: 100%;
     font-size: x-large;
     font-weight: bolder;
     text-align: center;
@@ -16,6 +17,7 @@ h1{
 }
 
 h2 {
+    width: 100%;
     display: inline-block;
     font-size: large;
     font-weight: bold;
@@ -61,20 +63,20 @@ h6 {
 
 p {
     width: 93%;
-    margin-bottom: 40%;
+    margin-bottom: 0.4em;
     line-height: 140%;
 }
 
 blockquote {
     width: 85%;
-    margin-bottom: 40%;
+    margin-bottom: 0.4em;
     background-color: #E6E6E6;
     line-height: 140%;
 }
 
 pre {
     width: 85%;
-    margin-bottom: 40%;
+    margin-bottom: 0.4em;
     background-color: #E6E6E6;
     font-family: monospace;
 }
@@ -110,7 +112,7 @@ td {
 
 ol, li {
     width: 85%;
-    margin-bottom: 20%;
+    margin-bottom: 0.2em;
 }
 
 strong {
