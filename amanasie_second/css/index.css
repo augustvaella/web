@@ -17,13 +17,13 @@ h1{
 }
 
 h2, h3, h4, h5 {
+    display: inline-block;
     width: 80%;
     margin-left: 0;
     margin-right: auto;
 }
 
 h2 {
-    display: inline-block;
     font-size: large;
     font-weight: bold;
     margin-bottom: 1em;
@@ -54,15 +54,16 @@ h5 {
 }
 
 h6 {
-    width: 100%;
+    width: auto;
+    height: auto;
     float: left;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0.2em;
     padding-right: 8px;
     padding-bottom: 8px;
     font-size: medium;
-    font-weight: normal;
-    margin-bottom: 0.2em;
+    font-weight: bold;
 }
 
 p {
@@ -123,8 +124,15 @@ td {
     padding: 2px;
 }
 
-ol, li {
+ol, ul {
     width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.4em;
+}
+
+li {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.1em;
