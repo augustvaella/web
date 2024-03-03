@@ -9,6 +9,7 @@ body {
     font-size: medium;
     font-weight: normal;
     font-family: sans-serif;
+    clear: both;
 }
 
 h1{
@@ -62,7 +63,7 @@ h5 {
 }
 
 h6 {
-    display: inline;
+    float: left;
     width: auto;
     height: auto;
     margin-left: auto;
