@@ -18,6 +18,8 @@ h1{
     font-weight: bolder;
     text-align: center;
     line-height: 1.2em;
+    padding-bottom: 2em;
+    border-bottom: 2px black solid;
     margin-bottom: 2em;
 }
 
@@ -28,7 +30,6 @@ h2, h3, h4, h5 {
 }
 
 h2 {
-    display: inline-block;
     font-size: large;
     font-weight: bold;
     line-height: 1.1em;
