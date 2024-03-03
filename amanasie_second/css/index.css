@@ -62,14 +62,14 @@ h6 {
 }
 
 p {
-    width: 85%;
+    width: 93%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40%;
 }
 
 blockquote {
-    width: 65%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40%;
@@ -77,14 +77,16 @@ blockquote {
 }
 
 tr {
-
+    border-botttom: 1px black solid;
+    padding-bottom: 2px;
 }
 
 th {
     background-color: #FFDDCC;
     font-weight: bolder;
+    margin-left: 0.1em;
 }
 
 td {
-
+    margin-left: 0.1em;
 }
