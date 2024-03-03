@@ -1,0 +1,22 @@
+name: SCP Test Deploy
+
+on:
+    push:
+        branches:
+            - develop
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - name: SCP Deploy
+          uses: appleboy/scp-action@v0.1.7
+          with:
+                key: ${{ secrets.SK }}
+                port: ${{ secrets.SSH_PORT }}
+                username: ${{ secrets.SSH_USERNAME }}
+                host: ${{ secrets.SSH_HOST }}
+                source: 'amanasie_second/*'
+                target: '/home/akane121/www/test'
