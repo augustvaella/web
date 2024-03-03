@@ -6,6 +6,9 @@ body {
     color: black;
     line-height: 1.2em;
     text-align: left;
+    font-size: medium;
+    font-weight: normal;
+    font-family: sans-serif;
 }
 
 h1{
