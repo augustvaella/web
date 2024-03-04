@@ -6,5 +6,5 @@
 *.avi
 *.mp4
 
-!./amanasie_second/img/test.png
+!/amanasie_second/img/test.png
 
