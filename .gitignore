@@ -6,3 +6,5 @@
 *.avi
 *.mp4
 
+!img/test.png
+
