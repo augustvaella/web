@@ -27,7 +27,7 @@ $(function(){
             markdown_text = text;
             //markdown_text = convert_entity_letters(text);
             $("div[id='main']").html(marked.parse(markdown_text));
-            //$("span[data-name='thumbnail link']").each(convert_link_thumbnail);
+            $("span[data-name='thumbnail link']").each(convert_link_thumbnail);
 
         }).fail(function(jqXHR, textStatus, errorThrown){
             text = "Failed: XMLHttpRequest:" + jqXHR.status + " Status: " + textStatus + " ErrorThrown:" + errorThrown.message;
