@@ -27,8 +27,6 @@ h2, h3, h4, h5 {
     width: 80%;
     margin-left: 0;
     margin-right: auto;
-    border-left: 4px black solid;
-    padding-left: 0.1em;
 }
 
 h2 {
@@ -38,6 +36,8 @@ h2 {
     margin-bottom: 1em;
     padding-bottom: 0.1em;
     border-bottom: 2px black solid;
+    border-left: 1em black double;
+    padding-left: 0.1em;
 }
 
 h3 {
@@ -46,6 +46,8 @@ h3 {
     line-height: 1.1em;
     margin-bottom: 0.8em;
     border-left: 4px black solid;
+    border-left: 1em black double;
+    padding-left: 0.1em;
 }
 
 h4 {
@@ -53,6 +55,8 @@ h4 {
     font-weight: bold;
     line-height: 1.1em;
     margin-bottom: 0.5em;
+    border-left: 0.3em black solid;
+    padding-left: 0.1em;
 }
 
 h5 {
@@ -60,6 +64,8 @@ h5 {
     font-weight: bold;
     line-height: 1.1em;
     margin-bottom:0.3em;
+    border-left: 2px black solid;
+    padding-left: 0.1em;
 }
 
 h6 {
@@ -68,8 +74,8 @@ h6 {
     height: auto;
     padding: 0;
     margin-left: auto;
-    margin-right: 0.2em;
-    margin-bottom: 0.2em;
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
     font-size: medium;
     font-weight: bold;
     line-height: 1.1em;
