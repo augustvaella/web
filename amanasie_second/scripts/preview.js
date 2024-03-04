@@ -10,7 +10,7 @@ $(function(){
 
     const convert_link_thumbnail = function(index, element){
         let d = $(element).data();
-        console.log(d);
+        //console.log(d);
         let c = `width: ${d.width}; height: ${d.height};`;
         let h = `<a href='${d.image}'><img src='${d.image}' alt='${d.image}' style='${c}' /></a>`;        
         $(element).html(h);

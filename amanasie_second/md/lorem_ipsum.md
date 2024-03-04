@@ -105,9 +105,9 @@
 
 <span data-name="thumbnail link" data-image="./img/test.png" data-width="50%" data-height="50%">サムネイル付きリンク</span>
 <span data-name="thumbnail link" data-image="./img/test.png" data-width="10%" data-height="10%">サムネイル付きリンク</span>
-<span data-name="thumbnail link" data-image="./img/test.png" data-width="500" data-height="500">サムネイル付きリンク</span>
-<span data-name="thumbnail link" data-image="./img/test.png" data-width="100" data-height="100">サムネイル付きリンク</span>
-<span data-name="thumbnail link" data-image="./img/test.png" data-width="50" data-height="50">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="500px" data-height="500px">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="100px" data-height="100px">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="50px" data-height="50px">サムネイル付きリンク</span>
 
 --------
 
