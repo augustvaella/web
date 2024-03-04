@@ -76,6 +76,7 @@ h5 {
 
 h6 {
     float: left;
+    text-align: right;
     width: 12em;
     height: auto;
     padding: 0;
