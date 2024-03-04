@@ -104,10 +104,10 @@
 [リンク1](./index.html?name=doujinshi_list)
 
 <span data-name="thumbnail link" data-image="./img/test.png" data-width="50%" data-height="50%">サムネイル付きリンク</span>
-<span data-name="thumbnail" data-image="./img/test.png" data-width="10%" data-height="10%">サムネイル付きリンク</span>
-<span data-name="thumbnail" data-image="./img/test.png" data-width="500" data-height="500">サムネイル付きリンク</span>
-<span data-name="thumbnail" data-image="./img/test.png" data-width="100" data-height="100">サムネイル付きリンク</span>
-<span data-name="thumbnail" data-image="./img/test.png" data-width="50" data-height="50">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="10%" data-height="10%">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="500" data-height="500">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="100" data-height="100">サムネイル付きリンク</span>
+<span data-name="thumbnail link" data-image="./img/test.png" data-width="50" data-height="50">サムネイル付きリンク</span>
 
 --------
 
