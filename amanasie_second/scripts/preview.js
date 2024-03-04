@@ -24,6 +24,7 @@ $(function(){
             url: url,
             dataType:"text",
         }).done(function(text){
+            markdown_text = text;
             //markdown_text = convert_entity_letters(text);
             $("div[id='main']").html(marked.parse(markdown_text));
             //$("span[data-name='thumbnail link']").each(convert_link_thumbnail);
