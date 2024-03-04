@@ -18,6 +18,18 @@ div#main {
     border : 0;
 }
 
+div#main div#info {
+    width: 70%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    line-height: 1.2em;
+    font-size: medium;
+    font-family: sans-serif;
+    text-align: center;
+}
+
 h1{
     width: 100%;
     font-size: x-large;
@@ -41,9 +53,9 @@ h2 {
     line-height: 1.1em;
     margin-bottom: 1em;
     padding-bottom: 0.1em;
+    padding-left: 0.1em;
     border-bottom: 2px black solid;
     border-left: 1em black double;
-    padding-left: 0.1em;
 }
 
 h3 {
@@ -186,5 +198,6 @@ strike {
 }
 
 hr {
-
+    width: 100%;
+    margin: 18px auto;
 }
