@@ -19,4 +19,4 @@ jobs:
                 username: ${{ secrets.SSH_USERNAME }}
                 host: ${{ secrets.SSH_HOST }}
                 source: 'amanasie_second/*'
-                target: '/home/akane121/www/test'
+                target: '~/www/test'
