@@ -1,0 +1,29 @@
+name: Markdown to Html
+
+on:
+    push:
+        branches: main
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Build
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v2
+            - name: Markdown to Html
+              uses: docker://pandoc/core:2.9
+              with:
+                args: -f markdown -t html memo.md > memo.html
+            - name: SCP Deploy
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                  key: ${{ secrets.SK }}
+                  port: ${{ secrets.SSH_PORT }}
+                  username: ${{ secrets.SSH_USERNAME }}
+                  host: ${{ secrets.SSH_HOST }}
+                  source: 'amanasie_second/*'
+                  target: '~/www'
+        
+

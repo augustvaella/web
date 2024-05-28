@@ -6,6 +6,28 @@ body {
     color: black;
     line-height: 1.2em;
     text-align: left;
+    font-size: medium;
+    font-weight: normal;
+    font-family: sans-serif;
+    clear: both;
+}
+
+div#main {
+    margin: 0;
+    padding: 0;
+    border : 0;
+}
+
+div#main div#info {
+    width: 70%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    line-height: 1.2em;
+    font-size: medium;
+    font-family: sans-serif;
+    text-align: center;
 }
 
 h1{
@@ -13,6 +35,9 @@ h1{
     font-size: x-large;
     font-weight: bolder;
     text-align: center;
+    line-height: 1.2em;
+    padding-bottom: 2em;
+    border-bottom: 2px black solid;
     margin-bottom: 2em;
 }
 
@@ -23,46 +48,57 @@ h2, h3, h4, h5 {
 }
 
 h2 {
-    display: inline-block;
     font-size: large;
     font-weight: bold;
+    line-height: 1.1em;
     margin-bottom: 1em;
-    padding-left: 0.1em;
     padding-bottom: 0.1em;
-    border-left: 4px black solid;
+    padding-left: 0.1em;
     border-bottom: 2px black solid;
+    border-left: 1em black double;
 }
 
 h3 {
     font-size: large;
     font-weight: bold;
+    line-height: 1.1em;
     margin-bottom: 0.8em;
-    padding-left: 0.1em;
     border-left: 4px black solid;
+    border-left: 1em black double;
+    padding-left: 0.1em;
 }
 
 h4 {
     font-size: large;
     font-weight: bold;
+    line-height: 1.1em;
     margin-bottom: 0.5em;
+    border-left: 0.3em black solid;
+    padding-left: 0.1em;
 }
 
 h5 {
     font-size: medium;
     font-weight: bold;
+    line-height: 1.1em;
     margin-bottom:0.3em;
+    border-left: 2px black solid;
+    padding-left: 0.1em;
 }
 
 h6 {
-    width: 100%;
     float: left;
+    text-align: right;
+    width: 12em;
+    height: auto;
+    padding: 0;
     margin-left: auto;
-    margin-right: auto;
-    padding-right: 8px;
-    padding-bottom: 8px;
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
+    margin-top: 1.0em;
     font-size: medium;
-    font-weight: normal;
-    margin-bottom: 0.2em;
+    font-weight: bold;
+    line-height: 1.1em;
 }
 
 p {
@@ -123,12 +159,28 @@ td {
     padding: 2px;
 }
 
-ol, li {
+ol, ul {
     width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.4em;
+    line-height: 1.0em;
+}
+
+li {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.1em;
     padding: 3px;
+    line-height: 1.2em;
+}
+
+li p {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
 }
 
 strong {
@@ -146,5 +198,6 @@ strike {
 }
 
 hr {
-
+    width: 100%;
+    margin: 18px auto;
 }
