@@ -12,6 +12,8 @@ jobs:
         steps:
             - name: Check out code
               uses: actions/checkout@v2
+            - run: |
+                ls -al
             - name: Markdown to Html
               uses: docker://pandoc/core:2.9
               with:
