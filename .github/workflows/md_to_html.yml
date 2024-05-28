@@ -15,7 +15,7 @@ jobs:
             - name: Markdown to Html
               uses: docker://pandoc/core:2.9
               with:
-                args: -f markdown -t html -o memo.html ./memo.md
+                args: -f markdown -t html -o ./amanasie_second/memo.html ./amanasie_second/memo.md
             - name: SCP Deploy
               uses: appleboy/scp-action@v0.1.7
               with:
