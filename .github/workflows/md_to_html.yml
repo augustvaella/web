@@ -12,12 +12,10 @@ jobs:
         steps:
             - name: Check out code
               uses: actions/checkout@v2
-            - run: |
-                echo "html" > ./memo.html
             - name: Markdown to Html
               uses: docker://pandoc/core:2.9
               with:
-                args: -f markdown -t html --output=memo.html ./memo.md > 
+                args: -f markdown -t html -o memo.html ./memo.md
             - name: SCP Deploy
               uses: appleboy/scp-action@v0.1.7
               with:
