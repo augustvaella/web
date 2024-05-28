@@ -2,8 +2,8 @@ name: SCP Test Deploy
 
 on:
     push:
-        branches:
-            - develop
+        branches-ignore:
+            - '**'
 
 jobs:
     build:

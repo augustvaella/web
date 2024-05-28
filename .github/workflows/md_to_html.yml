@@ -11,7 +11,7 @@ jobs:
         name: Build
         steps:
             - name: Check out code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
             - name: Markdown to Html
               uses: docker://pandoc/core:2.9
               with:
