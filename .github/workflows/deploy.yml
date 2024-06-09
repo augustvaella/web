@@ -2,8 +2,8 @@ name: SCP Deploy
 
 on:
     push:
-        branches-ignore:
-            - '**'
+        branches:
+            - main
 
 jobs:
     build:
@@ -18,5 +18,5 @@ jobs:
                 port: ${{ secrets.SSH_PORT }}
                 username: ${{ secrets.SSH_USERNAME }}
                 host: ${{ secrets.SSH_HOST }}
-                source: 'amanasie_second/*'
+                source: 'amanasie_simple/*'
                 target: '~/www'

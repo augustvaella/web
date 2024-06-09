@@ -2,7 +2,8 @@ name: Markdown to Html
 
 on:
     push:
-        branches: main
+        branches-ignore:
+          - '**'
     workflow_dispatch:
 
 jobs:
