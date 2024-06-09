@@ -6,17 +6,42 @@ on:
             - main
 
 jobs:
-    build:
-        name: Build
+    pandoc:
         runs-on: ubuntu-latest
+        name: Pandoc
+        container:
+            image: docker://pandoc/core:2.9
+            options: --entrypoint=sh
         steps:
-        - uses: actions/checkout@v4
+          - name: Check out code
+            uses: actions/checkout@v4
+          - name: Markdown to Html
+            run: |
+              mkdir -p output
+              find ./amanasie_simple/ -name '*.md' -type f -exec basename {} .md \; | xargs -I{} pandoc -f markdown -t html -o output/{}.html ./amanasie_simple/{}.md
+          - name: Upload html
+            uses: actions/upload-artifact@v4
+            with:
+              name: pandoc-html
+              path: output
+    build:
+        runs-on: ubuntu-latest
+        name: Build
+        needs: pandoc
+        steps:
+        - name: Check out code
+          uses: actions/checkout@v4
+        - name: Download html
+          uses: actions/download-artifact@v4
+          with:
+            name: pandoc-html
+            path: amanasie_simple
         - name: SCP Deploy
           uses: appleboy/scp-action@v0.1.7
           with:
-                key: ${{ secrets.SK }}
-                port: ${{ secrets.SSH_PORT }}
-                username: ${{ secrets.SSH_USERNAME }}
-                host: ${{ secrets.SSH_HOST }}
-                source: 'amanasie_simple/*'
-                target: '~/www'
+            key: ${{ secrets.SK }}
+            port: ${{ secrets.SSH_PORT }}
+            username: ${{ secrets.SSH_USERNAME }}
+            host: ${{ secrets.SSH_HOST }}
+            source: 'amanasie_simple/*'
+            target: '~/www'
