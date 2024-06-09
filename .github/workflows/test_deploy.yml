@@ -17,10 +17,11 @@ jobs:
           uses: actions/checkout@v4
         - name: Markdown to Html
           run: |
-            find ./amanasie_simple/ '*.md' -type f -exec sh -c 'pandoc -f markdown -t html -o ${0%.md}.html ${0}' {} \;
+            find ./amanasie_simple/ -name '*.md' -type f -exec sh -c 'pandoc -f markdown -t html -o ${0%.md}.html ${0}' {} \;
     build:
         runs-on: ubuntu-latest
         name: Build
+        needs: pandoc
         steps:
         - name: Check out code
           uses: actions/checkout@v4
