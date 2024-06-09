@@ -18,8 +18,7 @@ jobs:
         - name: Markdown to Html
           run: |
             mkdir -p output
-            find ./amanasie_simple/ -name '*.md' -type f | while read -r line
-            do
+            find ./amanasie_simple/ -name '*.md' -type f | while read -r line; do
               HTML_OLD_PATH=${line/.md/.html}
               HTML_OUTPUT_PATH=${MD_OLD_PATH/amanasie_simple/output}
               pandoc -f markdown -t html -o ${HTML_OUTPUT_PATH} ${line}
