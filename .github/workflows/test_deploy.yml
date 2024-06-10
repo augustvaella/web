@@ -35,7 +35,7 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: pandoc-html
-            path: downloaded
+            path: pub
         - name: SCP Deploy
           uses: appleboy/scp-action@v0.1.7
           with:
@@ -43,5 +43,5 @@ jobs:
             port: ${{ secrets.SSH_PORT }}
             username: ${{ secrets.SSH_USERNAME }}
             host: ${{ secrets.SSH_HOST }}
-            source: 'downloaded/*, common/index.css'
+            source: 'pub/*'
             target: '~/www/test'
