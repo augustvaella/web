@@ -43,5 +43,5 @@ jobs:
             port: ${{ secrets.SSH_PORT }}
             username: ${{ secrets.SSH_USERNAME }}
             host: ${{ secrets.SSH_HOST }}
-            source: 'downloaded/*'
+            source: 'downloaded/*, common/index.css'
             target: '~/www/test'
