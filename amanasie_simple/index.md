@@ -6,9 +6,9 @@
 
 [合同誌参加一覧](goudoushi.html)
 
-[参加イベント一覧](doujin_events.md)
+[参加イベント一覧](doujin_events.html)
 
-[作品一覧](works.md)
+[作品一覧](works.html)
 
 ## プロフィール
 
