@@ -3,7 +3,7 @@ name: SCP Deploy
 on:
     push:
         branches:
-            - main
+            - 'main'
 
 jobs:
     pandoc:
