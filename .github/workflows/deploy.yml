@@ -43,5 +43,5 @@ jobs:
             port: ${{ secrets.SSH_PORT }}
             username: ${{ secrets.SSH_USERNAME }}
             host: ${{ secrets.SSH_HOST }}
-            source: 'amanasie_simple/*'
-            target: '~/www'
+            source: 'pub/*'
+            target: '~/www/amanasie_simple'
